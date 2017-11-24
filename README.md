@@ -30,15 +30,21 @@
 ### 第三章 自动化生成项目中的html页面文件
 
 3-1. 简介
-    使用 html-webpack-plugin 将打包后的资源文件引入html模板。
-	* 安装:
-	  npm install html-webpack-plugin --save-dev
-	* 配置:
-	  new htmlWebpackPlugin({
-	      // filename 指定输出的html文件名
-	      // template 指定所使用的html模板
-	      // inject   插入的位置 head / body
-	  })
+- 使用 html-webpack-plugin 将打包后的资源文件引入html模板。
+* 安装:
+    ```
+    npm install html-webpack-plugin --save-dev
+    ```
+
+* 配置:
+    ```js
+    new htmlWebpackPlugin({ 
+        // filename 指定输出的html文件名  
+        // template 指定所使用的html模板  
+        // inject   插入的位置 head / body  
+    })
+    ```
+
 
 ### 第四章 处理项目中的资源文件
 
