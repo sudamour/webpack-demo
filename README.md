@@ -1,6 +1,6 @@
 # 个人 webpack 学习笔记
 
-本学习笔记基于讲师 qbaty 的《webpack深入于实战》，视频地址：[***链接***](https://www.imooc.com/learn/802)
+> 本学习笔记基于讲师 qbaty 的《webpack深入于实战》，视频地址：[***链接***](https://www.imooc.com/learn/802)
 
 ### 第一章 webpack 基本介绍
 
