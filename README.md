@@ -4,7 +4,7 @@
 
 ### 第一章 webpack 基本介绍
 
-1-1. webpack 基本介绍
+1-1 webpack 基本介绍
 
 1-2. webpack 安装和命令行
 
@@ -14,18 +14,18 @@
 
 2-2. webpack 配置项 entry 和 filename
 
-	* node中调用webpack：
+* node中调用webpack：
 
-	```js
-	webpack({
-		//配置
-	}, callback);
-	```
+    ```js
+    webpack({
+        //配置
+    }, callback);
+    ```
 
-	* entry 3种写法：
-		传对象方式要给filename使用占位符，[hash]/[name]/[chunkhash]
-		* hash -- 单次打包的哈希值
-		* chunkhash -- 相当于文件版本号
+* entry 3种写法：
+    传对象方式要给filename使用占位符，[hash]/[name]/[chunkhash]
+    * hash -- 单次打包的哈希值
+    * chunkhash -- 相当于文件版本号
 
 ### 第三章 自动化生成项目中的html页面文件
 
