@@ -8,7 +8,7 @@
 
 2. webpack 安装和命令行
 
-### webpack 基本配置
+### 第二章 webpack 基本配置
 
 1. webpack 配置文件
 
@@ -17,9 +17,9 @@
 	* node中调用webpack：
 
 	```js
-		webpack({
-			//配置
-		}, callback);
+	webpack({
+		//配置
+	}, callback);
 	```
 
 	* entry 3种写法：
@@ -27,4 +27,4 @@
 		* hash -- 单次打包的哈希值
 		* chunkhash -- 相当于文件版本号
 
-### 生成项目中的html页面文件
+### 第三章 生成项目中的html页面文件
