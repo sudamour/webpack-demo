@@ -2,17 +2,17 @@
 
 本学习笔记基于讲师 qbaty 的《webpack深入于实战》，视频地址：[***链接***](https://www.imooc.com/learn/802)
 
-#### webpack 基本介绍
+### 第一章 webpack 基本介绍
 
 1. webpack 基本介绍
 
-* webpack 安装和命令行
+2. webpack 安装和命令行
 
-#### webpack 基本配置
+### webpack 基本配置
 
 1. webpack 配置文件
 
-* webpack 配置项 entry 和 filename
+2. webpack 配置项 entry 和 filename
 
 	* node中调用webpack：
 
@@ -27,4 +27,4 @@
 		* hash -- 单次打包的哈希值
 		* chunkhash -- 相当于文件版本号
 
-#### 生成项目中的html页面文件
+### 生成项目中的html页面文件
