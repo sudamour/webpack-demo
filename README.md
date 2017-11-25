@@ -4,15 +4,15 @@
 
 ### 第一章 webpack 基本介绍
 
-1-1 webpack 基本介绍
+#### 1-1 webpack 基本介绍
 
-1-2. webpack 安装和命令行
+#### 1-2. webpack 安装和命令行
 
 ### 第二章 webpack 基本配置
 
-2-1. webpack 配置文件
+#### 2-1. webpack 配置文件
 
-2-2. webpack 配置项 entry 和 filename
+#### 2-2. webpack 配置项 entry 和 filename
 
 * node中调用webpack：
 
@@ -29,14 +29,14 @@
 
 ### 第三章 自动化生成项目中的html页面文件
 
-3-1. 简介
+#### 3-1. 简介
 - 使用 html-webpack-plugin 将打包后的资源文件引入html模板。
 - 安装:
     ```
     npm install html-webpack-plugin --save-dev
     ```
 
-3-2. 配置
+#### 3-2. 配置
 - 参数配置
     ```js
     new htmlWebpackPlugin({ 
@@ -71,7 +71,7 @@
     }
 
     ```
-3-3. 多页面
+#### 3-3. 多页面
 - 在plugins选项多次实例htmlWebpackPlugin，并添加相应配置信息（以下内容简称配置）以实现多页面输出：
     ````
     plugins: {
@@ -85,7 +85,7 @@
     * 配置中的「chunks」指定要引入的chunk；
     * 配置中的「excludeChunks」指定不引入的chunk；
 
-3-4. 以inline形式引入
+#### 3-4. 以inline形式引入
 - 为了减少js等资源文件的http请求，通过inline的形式将文件内容嵌入到页面当中。
     ````
     // 利用webpack源码的方法在html文件中写入如下代码
@@ -102,21 +102,20 @@
     <% } %>
     ````
 
-> ###### 小结
+> ##### 小结
 > 学习了如何使html文件引入动态生成的文件，并且使用配置信息使两者一一对应。自定义html，传参，
-
 
 
 ### 第四章 处理项目中的资源文件
 
-4-1. loader介绍
+#### 4-1. loader介绍
 
-4-2. 使用 babel-loader 转码es6
+#### 4-2. 使用 babel-loader 转码es6
 
-4-3. 处理项目中的 css
+#### 4-3. 处理项目中的 css
 
-4-4. 使用 less 和 sass
+#### 4-4. 使用 less 和 sass
 
-4-5. 处理模板文件
+#### 4-5. 处理模板文件
 
-4-6. 处理图片和其他文件
+#### 4-6. 处理图片和其他文件
