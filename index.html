@@ -2,8 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>webpack demo</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+        <%= compilation.assets[htmlWebpackPlugin.files.chunks['main'].entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+    </script>
 </head>
 <body>
+<!-- I'm a comment -->
+
+<% for (var k in htmlWebpackPlugin.files.chunks) { %>
+    <% if (k != 'main') { %>
+        <script src="<%= htmlWebpackPlugin.files.chunks[k].entry %>"></script>
+    <% } %>
+<% } %>
+
 </body>
 </html>

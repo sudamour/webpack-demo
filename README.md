@@ -31,19 +31,80 @@
 
 3-1. 简介
 - 使用 html-webpack-plugin 将打包后的资源文件引入html模板。
-* 安装:
+- 安装:
     ```
     npm install html-webpack-plugin --save-dev
     ```
 
-* 配置:
+3-2. 配置
+- 参数配置
     ```js
     new htmlWebpackPlugin({ 
         // filename 指定输出的html文件名  
         // template 指定所使用的html模板  
-        // inject   插入的位置 head / body  
+        // inject   插入的位置 head / body 
+        // minify   压缩参数
+        // .
+        // .
     })
     ```
+- html调用
+    ```
+    // 指定位置引用打包文件
+    <%= htmlWebpackPlugin.files.chunks['name'].entry %>
+    ```
+    引用之后的路径只有webpack配置选项output中的filename参数，想要使用完整线上路径，应该在output中添加publicPath参数。
+    ```
+    output: {
+        path: './dist',
+        filename: 'js/[name].js',
+        publicPath: 'http://cdn.com/'
+    }
+    ```
+- minify选项配置
+    ```
+    minify: {
+        removeComments: true,
+        collapseWhitespace: true
+        // .
+        // .
+    }
+
+    ```
+3-3. 多页面
+- 在plugins选项多次实例htmlWebpackPlugin，并添加相应配置信息（以下内容简称配置）以实现多页面输出：
+    ````
+    plugins: {
+        new htmlWebpackPlugin({// 配置}),
+        new htmlWebpackPlugin({// 配置}),
+        // .
+        // .
+    }
+    ````
+    * 配置中的「filename」指定输出的html文件名；
+    * 配置中的「chunks」指定要引入的chunk；
+    * 配置中的「excludeChunks」指定不引入的chunk；
+
+3-4. 以inline形式引入
+- 为了减少js等资源文件的http请求，通过inline的形式将文件内容嵌入到页面当中。
+    ````
+    // 利用webpack源码的方法在html文件中写入如下代码
+    <script>
+    <%= compilation.assets[htmlWebpackPlugin.files.chunks['name'].entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+    </script>
+    ````
+    并将其他文件循环输出。
+    ````
+    <% for (var k in htmlWebpackPlugin.files.chunks) { %>
+        <% if (k != 'main') { %>
+            <script src="<%= htmlWebpackPlugin.files.chunks[k].entry %>"></script>
+        <% } %>
+    <% } %>
+    ````
+
+> ###### 小结
+> 学习了如何使html文件引入动态生成的文件，并且使用配置信息使两者一一对应。自定义html，传参，
+
 
 
 ### 第四章 处理项目中的资源文件
