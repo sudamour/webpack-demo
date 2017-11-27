@@ -20,7 +20,7 @@ module.exports = {
             inject: false,
             title: 'this is a.html',
             minify: {
-                removeComments: true
+                removeComcments: true
             },
             chunks: ['main', 'a']
         }),
